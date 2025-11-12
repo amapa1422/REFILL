@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refill Station 360 - Economize e Salve o Planeta</title>
+    <!-- Carregamento do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind (cores e fontes) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'], // Fonte limpa e moderna
+                    },
+                    colors: {
+                        'primary-green': '#059669', // Verde Principal (Esmeralda 600)
+                        'secondary-green': '#10b981', // Verde Secundário (Esmeralda 500)
+                        'dark-bg': '#1f2937', // Fundo escuro para seções de destaque
+                        'light-bg': '#f9fafb', // Fundo claro para seções
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Efeito de hover sutil para botões e cards */
+        .btn-primary {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(5, 150, 105, 0.39);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(5, 150, 105, 0.5);
+        }
+
+        .value-card {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Estilo para a linha do tempo do processo */
+        .process-step {
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #d1d5db;
+            /* Cor cinza clara */
+            z-index: 0;
+            transform: translateX(-50%);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .process-step::after {
+                left: 50%;
+            }
+        }
+    </style>
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Navbar/Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-primary-green">Refill Station 360</h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#inicio" class="text-gray-600 hover:text-primary-green">Início</a>
+                <a href="#processo" class="text-gray-600 hover:text-primary-green">Como Funciona</a>
+                <a href="#valor" class="text-gray-600 hover:text-primary-green">Proposta de Valor</a>
+                <a href="#diferenciais" class="text-gray-600 hover:text-primary-green">Diferenciais Tech</a>
+                <a href="#publico" class="text-gray-600 hover:text-primary-green">Público-Alvo</a>
+            </nav>
+            <button class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 1. Seção Principal (Hero) -->
+        <section id="inicio" class="bg-light-bg pt-20 pb-24 sm:pt-28 sm:pb-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- Conteúdo de Texto -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Pague pelo Produto, <span class="text-primary-green">Não pela Embalagem.</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+                        A Refill Station 360 é a revolução no seu consumo. Abasteça produtos de limpeza, higiene e
+                        alimentos, economize e ajude o planeta.
+                    </p>
+                    <a href="#processo"
+                        class="btn-primary inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-xl text-white bg-primary-green hover:bg-secondary-green md:py-4 md:text-lg md:px-10">
+                        <i data-lucide="zap" class="w-5 h-5 mr-2"></i>
+                        Ver o Processo de Recarga
+                    </a>
+                </div>
+
+                <!-- Imagem (Placeholder) -->
+                <div>
+                    <!-- Imagem de Destaque da Máquina/Conceito -->
+                    <img src="https://placehold.co/600x450/059669/ffffff?text=Refill+Station+360+em+Ação"
+                        alt="Máquina Refill Station 360 de Refil Sustentável"
+                        class="rounded-2xl shadow-2xl w-full h-auto border-4 border-white">
+                    <p class="mt-4 text-center text-sm text-gray-500 italic">
+                        Visão conceitual de nossa estação de recarga automatizada.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Como Funciona (Novo) -->
+        <section id="processo" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-primary-green font-semibold uppercase tracking-wider">Passo a Passo</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-16">Seu Refil Inteligente em 3 Etapas
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-12 relative">
+
+                    <!-- Passo 1 -->
+                    <div class="process-step">
+                        <div class="relative z-10 p-4 bg-primary-green rounded-full inline-block mb-6 shadow-xl">
+                            <i data-lucide="scan" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">1. Identifique e Pese</h3>
+                        <p class="text-gray-600">
+                            Traga seu recipiente (ou use um retornável da estação). Identifique-se com QR Code (EcoCash)
+                            e a máquina pesa o recipiente antes do refil.
+                        </p>
+                    </div>
+
+                    <!-- Passo 2 -->
+                    <div class="process-step">
+                        <div class="relative z-10 p-4 bg-primary-green rounded-full inline-block mb-6 shadow-xl">
+                            <i data-lucide="package-search" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">2. Escolha o Produto</h3>
+                        <p class="text-gray-600">
+                            Use a tela touch para selecionar o item desejado (alimentos, higiene ou limpeza) e insira a
+                            quantidade que você precisa.
+                        </p>
+                    </div>
+
+                    <!-- Passo 3 -->
+                    <div class="process-step">
+                        <div class="relative z-10 p-4 bg-primary-green rounded-full inline-block mb-6 shadow-xl">
+                            <i data-lucide="credit-card" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">3. Recarregue e Pague</h3>
+                        <p class="text-gray-600">
+                            A máquina dispensa o produto de forma precisa. O peso é calculado automaticamente e o
+                            pagamento é feito digitalmente (Pix/Cartão).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Problemática de Mercado (Antiga Seção 2) -->
+        <section id="problema" class="py-20 sm:py-28 bg-light-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+
+                    <!-- Coluna do Problema -->
+                    <div class="bg-red-50 p-8 rounded-2xl shadow-lg border-l-4 border-red-500">
+                        <i data-lucide="trash-2" class="w-10 h-10 text-red-600 mb-4"></i>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-3">Problemática de Mercado</h2>
+                        <p class="text-gray-600">
+                            Hoje, o consumo gera **toneladas de embalagens descartáveis**. O descarte incorreto
+                            sobrecarrega lixões e prejudica o meio ambiente. Além disso, o consumidor paga caro pela
+                            embalagem, um custo desnecessário.
+                        </p>
+                    </div>
+
+                    <!-- Coluna da Solução -->
+                    <div class="bg-green-50 p-8 rounded-2xl shadow-lg border-l-4 border-primary-green">
+                        <i data-lucide="check-circle" class="w-10 h-10 text-primary-green mb-4"></i>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-3">Nossa Ideia de Negócio</h2>
+                        <p class="text-gray-600">
+                            **Refill Station 360:** estações inteligentes de recarga onde o cliente leva sua própria
+                            embalagem (ou usa uma retornável) e abastece produtos a granel, **pagando somente pelo
+                            conteúdo**.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Proposta de Valor (Antiga Seção 3) -->
+        <section id="valor" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-primary-green font-semibold uppercase tracking-wider">Benefícios Principais</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-16">Nossa Proposta de Valor</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Valor 1: Economia -->
+                    <div class="bg-light-bg p-8 rounded-2xl shadow-lg value-card">
+                        <i data-lucide="trending-down" class="w-12 h-12 text-primary-green mb-5 mx-auto"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Economia de até 40%</h3>
+                        <p class="text-gray-600">
+                            Sem o custo da embalagem, o preço final para o consumidor pode ser reduzido em até 40%.
+                            Economia real no fim do mês.
+                        </p>
+                    </div>
+
+                    <!-- Valor 2: Sustentabilidade -->
+                    <div class="bg-light-bg p-8 rounded-2xl shadow-lg value-card">
+                        <i data-lucide="leaf" class="w-12 h-12 text-primary-green mb-5 mx-auto"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Sustentabilidade Real</h3>
+                        <p class="text-gray-600">
+                            Diminua drasticamente o descarte de embalagens plásticas de uso único. Uma atitude positiva
+                            e de impacto real para o planeta.
+                        </p>
+                    </div>
+
+                    <!-- Valor 3: Praticidade -->
+                    <div class="bg-light-bg p-8 rounded-2xl shadow-lg value-card">
+                        <i data-lucide="qr-code" class="w-12 h-12 text-primary-green mb-5 mx-auto"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Praticidade Digital</h3>
+                        <p class="text-gray-600">
+                            Máquinas 100% automatizadas, fáceis de usar, com identificação por QR Code e pagamento
+                            digital (Pix, Cartão).
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Diferenciais (Tech - Antiga Seção 4) -->
+        <section id="diferenciais" class="py-20 sm:py-28 bg-dark-bg text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-16">O que nos <span
+                        class="text-secondary-green">diferencia</span> (Tecnologia)</h2>
+
+                <div class="grid md:grid-cols-3 gap-10">
+
+                    <!-- Diferencial 1: Automação -->
+                    <div class="p-6">
+                        <i data-lucide="user-check" class="w-10 h-10 text-secondary-green mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold mb-2">Totalmente Automatizado</h3>
+                        <p class="text-gray-300 text-sm">
+                            Modelo self-service completo. Nossas estações funcionam sem a necessidade de funcionários
+                            dedicados.
+                        </p>
+                    </div>
+
+                    <!-- Diferencial 2: IoT -->
+                    <div class="p-6">
+                        <i data-lucide="signal" class="w-10 h-10 text-secondary-green mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold mb-2">Estações Inteligentes (IoT)</h3>
+                        <p class="text-gray-300 text-sm">
+                            As máquinas monitoram o estoque em tempo real e alertam os fornecedores automaticamente,
+                            evitando falta de produto.
+                        </p>
+                    </div>
+
+                    <!-- Diferencial 3: EcoCash -->
+                    <div class="p-6">
+                        <i data-lucide="award" class="w-10 h-10 text-secondary-green mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold mb-2">Programa de Pontos "EcoCash"</h3>
+                        <p class="text-gray-300 text-sm">
+                            Quanto mais o cliente reutiliza suas embalagens e abastece conosco, mais descontos e
+                            benefícios ele ganha.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Público-Alvo (Antiga Seção 5) -->
+        <section id="publico" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-16">Feito para quem se importa (Público-Alvo)
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Público 1: Jovens -->
+                    <div class="p-6 bg-gray-50 rounded-xl border border-gray-200">
+                        <i data-lucide="user" class="w-10 h-10 text-primary-green mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Jovens Adultos (18-35)</h3>
+                        <p class="text-gray-600 text-sm">
+                            Conscientes sobre sustentabilidade e engajados com novas tecnologias.
+                        </p>
+                    </div>
+
+                    <!-- Público 2: Famílias -->
+                    <div class="p-6 bg-gray-50 rounded-xl border border-gray-200">
+                        <i data-lucide="home" class="w-10 h-10 text-primary-green mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Famílias</h3>
+                        <p class="text-gray-600 text-sm">
+                            Focadas na economia doméstica (Classe Média) que buscam compras mais inteligentes.
+                        </p>
+                    </div>
+
+                    <!-- Público 3: B2B -->
+                    <div class="p-6 bg-gray-50 rounded-xl border border-gray-200">
+                        <i data-lucide="building" class="w-10 h-10 text-primary-green mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Empresas e Condomínios</h3>
+                        <p class="text-gray-600 text-sm">
+                            Que buscam ativamente reduzir seu impacto ambiental e oferecer diferenciais aos seus
+                            membros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h4 class="text-2xl font-bold mb-4">Refill Station 360</h4>
+            <p class="text-gray-400 mb-6 max-w-lg mx-auto">
+                Uma solução de Empreendedorismo para um mundo com menos lixo e mais economia.
+            </p>
+            <div class="flex justify-center space-x-6 text-sm font-medium mb-8">
+                <a href="#inicio" class="hover:text-secondary-green">Início</a>
+                <a href="#valor" class="hover:text-secondary-green">Proposta de Valor</a>
+                <a href="#diferenciais" class="hover:text-secondary-green">Diferenciais Tech</a>
+            </div>
+            <p class="text-xs text-gray-500">
+                Um projeto de: Felipe Lobato De Andrade, Vinicius Batista Santos, Kelvyn Kauã Pereira de Souza
+                Rodrigues.
+            </p>
+            <p class="mt-2 text-xs text-gray-500">&copy; 2025 Refill Station 360. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Inicializa os ícones Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
